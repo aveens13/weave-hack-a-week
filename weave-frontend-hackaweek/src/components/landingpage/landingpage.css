@@ -1,0 +1,132 @@
+.landingPage {
+  background-color: #0f0f0f;
+  padding-bottom: 2%;
+}
+.landingPage .landingWrapper{
+  margin: 0 13% 0 13%;
+}
+/* navbar section */
+.landingWrapper > nav {
+  display: flex;
+  background-color: #0f0f0f;
+  padding: 1rem 0;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.navbar-weave {
+  color: #fcfcfc;
+  font-size: 1.75rem;
+  line-height: 1.375rem;
+}
+
+.navbar-links {
+  background-color: #0f0f0f;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: #fcfcfc;
+  margin: 0 2.125rem;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  list-style: none;
+}
+
+.navbar-signup-button {
+  color: #fcfcfc;
+  font-weight: 500;
+  margin-left: 4.4375rem;
+  padding: 0.625rem 1.75rem;
+  border-radius: 25px;
+  border: 0.0625rem solid #fcfcfc;
+  background: none;
+}
+
+/* title-section  */
+.title-section {
+  display: flex;
+  justify-content: space-between;
+  background-color: #0f0f0f;
+  margin-bottom: 7.625rem;
+}
+
+.title-container {
+  background-color: #0f0f0f;
+  margin: 4.5rem 5.125rem 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  max-width: 590px;
+}
+
+.title-text {
+  color: #fcfcfc;
+  display: block;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-size: 3.5625rem;
+  line-height: 4rem;
+  padding-top: 2.0625rem;
+}
+.second {
+  margin-top: 0;
+  padding: 0;
+  background: linear-gradient(to right, #2aecca, #394cae);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+
+.title-paragraph {
+  color: #fcfcfc;
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  /* margin: 0 0 0 15rem; */
+  text-align: justify;
+}
+
+.button-container {
+  margin: 1.875rem 0 2.0625rem 0;
+  box-sizing: border-box;
+}
+
+.title-button {
+  color: #fcfcfc;
+  padding: 0.625rem 1.75rem;
+  border-radius: 25px;
+  border: 0.0625rem solid #fcfcfc;
+  background: none;
+}
+.signup {
+  margin-right: 1.5rem;
+  color: #0f0f0f;
+  background-color: #fcfcfc;
+}
+
+.title-picture {
+  box-sizing: border-box;
+  max-width: 430px;
+  max-height: 450px;
+  margin-top: 3rem;
+}
+
+.title-picture img {
+  width: 430px;
+  height: 450px;
+}
+
+/* feature box */
+
+.feature-box {
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  gap: 1.5rem;
+  margin-right: 8rem;
+}

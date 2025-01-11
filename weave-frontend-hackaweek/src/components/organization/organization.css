@@ -1,0 +1,211 @@
+.organization--hero {
+  height: 100%;
+  width: 100%;
+}
+
+.organization--hero .main-page-hero-organization {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  /* background-color: grey; */
+}
+
+.main-page-hero-organization .org-main-hero {
+  display: flex;
+  margin: 2rem;
+  padding: 1rem;
+  flex-direction: column;
+  width: 100%;
+}
+
+.org-main-hero .top-nav-org-hero {
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0.25rem;
+  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px,
+    rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+}
+
+.top-nav-org-hero .side-settings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* width: 100%; */
+}
+
+.top-nav-org-hero .side-settings .padThis {
+  display: flex;
+  align-items: center;
+  margin: 0 1.2rem;
+  padding: 0.5rem;
+  border: 1px solid rgba(224, 221, 221, 0.719);
+  border-radius: 0.45rem;
+}
+
+.org-main-hero .proposal-status-hero {
+  display: flex;
+  padding: 2rem 0.5rem 1rem 0.5rem;
+  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px,
+    rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+}
+
+.project-component-hero {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 1rem;
+}
+
+.project-component-hero .overview-info-comp {
+  background-color: rgba(251, 230, 190, 255);
+  border-radius: 0.25rem;
+  color: rgba(215, 154, 68, 255);
+  padding: 0.25rem 0.75rem;
+  font-family: "Poppins", sans-serif;
+  font-size: small;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
+.project-component-hero .projectInfoComp {
+  margin-right: 2rem;
+  margin-top: 1rem;
+  font-size: small;
+  border-radius: 0.5rem;
+  /* width: 100%; */
+}
+.project-component-hero .projectInfoComp .projectHead {
+  background-color: rgba(249, 250, 251, 255);
+}
+
+.projectHead,
+.projectComponent-hero {
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr 2fr 2fr 2fr; /* Adjust column sizes as needed */
+  align-items: center; /* Vertically aligns text */
+  padding: 1rem;
+  width: 100%;
+  font-size: small;
+  box-sizing: border-box;
+}
+
+.projectInfoComp .projectComponent-hero {
+  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px,
+    rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+  border-radius: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.projectInfoComp .projectname-css:hover {
+  color: #faad14;
+  cursor: pointer;
+}
+
+.card-submit-hero-main {
+  display: flex;
+  flex-direction: column;
+  padding: 0.125rem 1.25rem;
+}
+
+.card-submit-hero-main .top-submit-navUI {
+  display: flex;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px,
+    rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+}
+
+.card-submit-hero-main .card-action-org {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-bottom: 0.5rem;
+  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px,
+    rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+}
+.card-submit-hero-main .submit-info-project {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.submit-info-project .projectSubmit-status {
+  display: flex;
+  align-items: center;
+  font-size: small;
+  margin-top: 1rem;
+  /* background-color: black; */
+  width: fit-content;
+  height: fit-content;
+}
+
+.projectSubmit-status span {
+  width: 5rem;
+  color: #aeaeae;
+}
+
+.projectSubmit-status .status-info-project {
+  background-color: #7ad08b;
+  border-radius: 0.4rem;
+  padding: 0.125rem 0.5rem;
+}
+
+.projectSubmit-status .labels-info-project span {
+  color: black;
+  padding: 0.35rem 0.75rem;
+  margin-right: 0.5rem;
+  border-radius: 0.75rem;
+}
+
+.labels-info-project span:nth-child(1) {
+  /* Styles for the first span */
+  background-color: #978dfd;
+}
+
+.labels-info-project span:nth-child(2) {
+  /* Styles for the second span */
+  background-color: #fa864b;
+}
+
+.labels-info-project span:nth-child(3) {
+  /* Styles for the third span */
+  background-color: #fce425;
+}
+
+.submit-info-project .user-action-submit {
+  display: flex;
+  margin-top: 1rem;
+  padding: 1rem 0;
+  align-items: center;
+  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px,
+    rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+}
+
+.action-border-bottom {
+  border-bottom: 0.2rem solid #fa864b;
+  transition: ease-in-out all 0.2s;
+  border-radius: 0.125rem;
+}
+
+.org-active-student {
+  padding: 0 0.25rem;
+  width: 3rem;
+  color: rgb(42, 40, 40);
+  border-radius: 0.2rem;
+  background-color: #7ad08b;
+}
+
+.org-inactive-student {
+  padding: 0 0.25rem;
+  width: 3rem;
+  color: rgb(42, 40, 40);
+  border-radius: 0.2rem;
+  background-color: #978dfd;
+}
