@@ -1,0 +1,141 @@
+.dashboard_main {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  /* background-color: #f9f9f9; */
+  /* position: relative; */
+  justify-content: space-between;
+  /* height: 100%; */
+  max-height: 100vh;
+  margin-left: 2.3rem;
+  padding: 1.2rem;
+  overflow: hidden;
+  /* overflow-y: auto; */
+}
+.dashboard_main h3 {
+  margin-top: 0.8rem;
+}
+
+.dashboard_tasks_calendar {
+  position: sticky;
+  justify-content: flex-start;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  width: 25rem;
+}
+
+/* .dashboard_tasks_calendar {
+    z-index: 1000; /* Ensures it's above other content */
+/* position: fixed; Makes it stay fixed during scrolling */
+/* justify-content: flex-end; Aligns items at the bottom */
+/* display: flex; */
+/* flex-direction: column; */
+/* align-items: center; */
+/* width: 25rem; Adjust width as needed */
+/* top:    0px; Ensures it starts from the top of the viewport */
+/* right: 0; Positions it on the right side of the viewport */
+/* height: 100%; Full height to match viewport */
+/* background-color: #f9f9f9; Add a background color if needed */
+/* box-shadow: -1px 0 3px rgba(0, 0, 0, 0.1); Optional shadow for better appearance */
+/* }  */
+
+.dashboard_project_section {
+  display: flex;
+  flex-wrap: wrap;
+  height: calc(88vh);
+  flex-direction: column;
+  overflow-y: auto;
+  /* justify-content: space-around; */
+  width: 80%;
+  /* padding-bottom: 2rem; */
+  /* margin-bottom: 2rem; */
+  /* margin: 1rem 1rem 1rem 1rem; */
+  /* Hide the scrollbar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+.dashboard_project_cards {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard_project_section::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+.dashboard_pinned_projects {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.dashboard_unpinned_projects {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.dashboard_pinned_cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 20px;
+  margin-bottom: 2rem;
+}
+
+.dashboard_unpinned_cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 20px;
+  /* max-height: 20rem; */
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+#create_project_pinned {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  padding: 0.6rem 0.6rem 0.6rem 0.6rem;
+  border: none;
+  border-radius: 0.3rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  color: white;
+  background-color: #111;
+  cursor: pointer;
+  width: fit-content;
+  height: 2.8rem;
+}
+
+/* #create_project_button_u{
+    display:flex;
+    align-items: center;
+    font-size: 0.8rem;
+    padding: 0.6rem 0.6rem 0.6rem 0.6rem;
+    border: none;
+    border-radius: 0.3rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    color:white;
+    background-color: #111;
+    cursor: pointer;
+    width: fit-content;
+    height: 2.8rem;  
+} */
+
+.dashboard_pinned_title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.dashboard_unpinned_title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

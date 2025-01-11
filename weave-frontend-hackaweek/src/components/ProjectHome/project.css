@@ -1,0 +1,303 @@
+.project-home-hero{
+    /* width: 100%; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: auto;
+    padding: 0 2%;
+}
+.task-card .card--main{
+    width: 90%;
+    display: flex;
+    background-color: white;
+    border-radius: 0.8rem;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    padding: 1rem;
+    margin: 1rem;
+}
+.card--main .card--info{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.card--info .title{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+}
+.card--info .title button{
+    background-color: transparent;
+    border: none;
+    margin-left: auto;
+    color: rgba(255, 68, 0, 0.372);
+    cursor: pointer;
+}
+.card--info .title button.checked{
+    color: white;
+    background-color: #11db27;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    border-radius: 50%;
+}
+.card--info .title h5{
+    margin: 0 1rem;
+}
+.card--info .bottom{
+    display: flex;
+    width: 12rem;
+    align-items: center;
+    justify-content: space-between;
+}
+.bottom img{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+.title .event{
+    color: #c0e4cc;
+}
+
+/* Document Section  */
+.document-section .document--hero{
+    display: flex;
+    flex-direction: column;
+}
+.document--hero .top-document{
+    margin-left: auto;
+}
+.top-document .drop-icon{
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.document--hero .drop--main{
+    top: 6%;
+    right: 1.3%;
+    width: 30%;
+    padding: 1rem;
+    position: absolute;
+    z-index: 10000;
+    border-radius: 0.8rem;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.drop-nav nav ul {
+    padding-inline-start: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.drop-nav nav ul li{
+    display: flex;
+    padding: 1rem 1rem 1rem 0;
+    color: #9b9da1;
+    transition: all 0.3s ease-in-out;
+}
+.drop-nav nav ul li:hover{
+    transform: scale(1.01);
+    cursor: pointer;
+    color: black;
+}
+.drop-nav nav ul .closeicon{
+    cursor: pointer;
+    margin-left: auto;
+}
+.drop-nav nav ul > :first-child a{
+    color: #9b9da1;
+}
+.drop-nav nav ul > :first-child:hover a{
+    color: black;
+}
+.drop--main .project--details{
+    display: flex;
+    flex-direction: column;
+}
+
+.project--details .drop--info{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.drop--info .fas-fa-grey{
+    font-weight: 600;
+    color: #9b9da1;
+    width: 6vw;
+}
+.drop--info .fas-fa-black{
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+}
+.drop--info .desc-button > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    height: 2rem;
+    padding: 0.2rem 1rem;
+    border-radius: 0.4rem;
+}
+.desc-button .public{
+    background-color: #11db2941;
+    color: black;
+}
+.desc-button .private{
+    background-color: rgba(255, 0, 0, 0.633);
+    color: white;
+}
+.status-div p{
+    background-color: #eceef1;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.3rem;
+    color: black;
+}
+.drop--info .tags-div{
+    display: flex;
+}
+.tags-div p{
+    padding: 0.2rem 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 0.3rem;
+    background-color: #dbdbdc;
+}
+.bottom-drop{
+    display: flex;
+    flex-direction: column;
+}
+.bottom-drop .attachments{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.attachments button{
+    background-color: transparent;
+    color: #323ee2;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    height: 2rem;
+    margin-left: 1rem;
+}
+
+.document--hero .top-document-info{
+    display: flex;
+    flex-direction: column;
+}
+.document--hero .top-document-info ul{
+    z-index: 0;
+    display: flex;
+    /* justify-content: flex-end; */
+    color: #9b9da1;
+    font-weight: 600;
+    /* background-color: #323ee2; */
+}
+
+.top-document-info ul li{
+    margin: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.top-document-info ul > :nth-child(5) button{
+    background-color: #161a26;
+    border: none;
+    color: white;
+    padding: 0 0.6rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    height: 2rem;
+    border-radius: 0.2rem;
+}
+
+.top-document-info ul > :nth-child(6) button{
+    background-color: blueviolet;
+    border: none;
+    color: white;
+    font-size: 0.9rem;
+    padding: 0 0.6rem;
+    cursor: pointer;
+    height: 2rem;
+    border-radius: 0.2rem;
+}
+.top-document-info ul li.active{
+    border-bottom: 2px solid black;
+    border-radius: 5%;
+}
+.top-document-info ul li:hover{
+    transform: scale(1.01);
+    color: black;
+}
+
+
+/* Board Section */
+
+.board--section{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #eceef1;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    border-radius: 0.8rem;
+}
+
+.board--section nav{
+    /* width: 100%; */
+    margin: 1rem;
+}
+.board--section nav ul{
+    /* background-color: #11db27; */
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    padding-inline-start: 0;
+}
+
+
+.board--section nav ul li{
+    width: 33.3%;
+}
+.board--section nav ul li .top-section{
+    background-color: white;
+    display: flex;
+    align-items: center;
+   justify-content: center;
+   font-weight: 500;
+    text-align: center;
+}
+.board--section nav ul > :first-child .top-section{
+    /* color: #8b8b8b; */
+    color: #323ee2;
+    font-weight: 600;
+    border-top-left-radius: 0.8rem;
+    border-bottom-left-radius: 0.8rem;
+}
+
+.board--section nav ul > :nth-child(2) .top-section{
+    color: #e56a60;
+    font-weight: 600;
+}
+
+.board--section nav ul > :nth-child(3) .top-section{
+    color: #11db27;
+    font-weight: 600;
+    border-bottom-right-radius: 0.8rem;
+    border-top-right-radius: 0.8rem;
+}
+.board--section::-webkit-scrollbar{
+    width: 0.4rem;
+    background-color: #44444443;
+}
+.board--section::-webkit-scrollbar-thumb{
+    border-radius: 50px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #323ee29a;
+}

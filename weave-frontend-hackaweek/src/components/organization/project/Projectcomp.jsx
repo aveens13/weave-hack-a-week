@@ -6,7 +6,7 @@ import {
 } from "@ant-design/icons";
 import React, { useEffect, useState } from "react";
 import { Avatar, Tooltip, Badge, Progress, Button } from "antd";
-export default function ProjectComp({ handleClick, project }) {
+export default function ProjectComp({ handleClick, project, formatDate }) {
   return (
     <div className="project-component-hero">
       <div className="overview-info-comp">
@@ -30,7 +30,7 @@ export default function ProjectComp({ handleClick, project }) {
         {project.map((p) => (
           <div className="projectComponent-hero">
             <span onClick={() => handleClick(p)} className="projectname-css">
-              {p.name}
+              {p.projectTitle}
             </span>
             <span>{p.description}</span>
             <span>
@@ -43,35 +43,22 @@ export default function ProjectComp({ handleClick, project }) {
                   },
                 }}
               >
-                <Avatar src={p.avatar} />
-                <Avatar
-                  style={{
-                    backgroundColor: "#f56a00",
-                  }}
-                >
-                  {Array.from(p.name)[0]}
-                </Avatar>
-                <Tooltip title="Ant User" placement="top">
+                {p.members.map((member) => (
                   <Avatar
                     style={{
-                      backgroundColor: "#87d068",
+                      backgroundColor: "#f56a00",
                     }}
-                    icon={<UserOutlined />}
-                  />
-                </Tooltip>
-                <Avatar
-                  style={{
-                    backgroundColor: "#1677ff",
-                  }}
-                  icon={<AntDesignOutlined />}
-                />
+                  >
+                    {Array.from(member.name)[0]}
+                  </Avatar>
+                ))}
               </Avatar.Group>
             </span>
-            <span>Feb 14, 2025</span>
+            <span>{formatDate(p.deadline)}</span>
             <span>
               <Badge
-                status={p.priority == "Urgent" ? "error" : "success"}
-                text={p.priority}
+                status="success"
+                text="Urgent"
                 style={{
                   border: "1px solid #fff2f2",
                   padding: "0.12rem 0.5rem",
@@ -80,20 +67,12 @@ export default function ProjectComp({ handleClick, project }) {
               />
             </span>
             <span>
-              {p.progress == 50 ? (
-                <Progress
-                  percent={50}
-                  size="small"
-                  status="exception"
-                  style={{ width: "8rem" }}
-                />
-              ) : (
-                <Progress
-                  percent={100}
-                  size="small"
-                  style={{ width: "8rem" }}
-                />
-              )}
+              <Progress
+                percent={50}
+                size="small"
+                status="exception"
+                style={{ width: "8rem" }}
+              />
             </span>
           </div>
         ))}

@@ -1,0 +1,78 @@
+/* form-css */
+.userdetail-form {
+  width: 60%;
+  padding: 2rem;
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.userdetail-form div {
+  padding: 1rem;
+  border-bottom: 1px solid rgb(0, 0, 256, 0.1);
+}
+
+.input-label {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.325rem;
+  display: inline-block;
+  width: 25rem;
+}
+
+.input-area {
+  display: flex;
+  border-bottom: 1px solid rgb(0, 0, 256, 0.1);
+}
+
+.userdetail-form .input-area input {
+  flex: 1;
+  /* border-color: blue; */
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  border: none;
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  line-height: 1.325rem;
+  padding: 0.5rem 1rem;
+  margin-right: 20%;
+  box-sizing: border-box;
+}
+.userdetail-form input[type="submit"]{
+  width: 10rem;
+  line-height: 2rem;
+  align-items: center;
+  border: none;
+  border-radius: 0.4rem;
+  color: white;
+  background-color: blueviolet;
+}
+.image-inputbox {
+  font-size: 1rem;
+  line-height: 1.372rem;
+  color: grey;
+  background-color: white;
+  border: 1px solid blue;
+}
+
+/* to remove the default choose file button */
+.image-inputbox[type='file']::-webkit-file-upload-button {
+  display: none;
+}
+.image-inputbox[type='file']::file-selector-button {
+  display: none;
+}
+
+.bio-input {
+  border-color: blue;
+  font-size: 1rem;
+  line-height: 1.325rem;
+  height: 100px;
+  padding: 0.5rem;
+}
+
+.bio-div {
+  display: flex;
+}

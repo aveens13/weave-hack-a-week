@@ -1,223 +1,141 @@
+/* General Sidebar Container */
 .main_box {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 0px 10px 0 0px;
-  /* width: 20rem; */
-  width: 4rem;
-  /* background-color: #FAF9F6; */
-  background-color: black;
-  /* overflow: hidden; */
-  min-height: 100vh;
-  /* z-index: 999; */
-  transition: width 0.3s;
-  border-color: black;
+  justify-content: flex-start; /* Align everything to the top */
+  background-color: #111; /* Dark background */
+  color: #ffffff; /* Light text */
+  width: 100%; /* Ensure it occupies the full width of its parent */
+  height: 100%; /* Ensure it occupies the full height of its parent */
+  padding: 1rem;
+  box-sizing: border-box;
+  border-right: 1px solid #333;
+  gap: 1rem; /* Uniform spacing between major sections */
+  position: relative; /* For placing profile section at the bottom */
+  box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.2);
 }
 
-.main_box .logo {
-  width: 100%;
-  height: 11rem;
-  margin-bottom: 4rem;
-  box-sizing: border-box;
+/* Logo Section */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Reduced gap between logo and text */
 }
 
 #logo {
-  width: 4rem;
-  margin-bottom: 1.5rem;
-  margin-top: 28px;
+  width: 50px; /* Standard size for logo */
+  height: 50px;
   border-radius: 50%;
-  transition: all 0.3s ease-in-out;
-}
-.logo > .text {
-  color: white;
+  filter: invert(1);
 }
 
+.logo .text {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Section Titles (Menu and Pinned) */
 .inline_text {
-  display: none;
-  color: white;
   font-size: 0.9rem;
-  font-weight: 500;
-  width: 100%;
-  /* margin-left: 4rem; */
-  margin-top: 0rem;
-  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #888;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem; /* Reduce spacing */
 }
 
-.static_options {
+/* Menu and Pinned Sections */
+.static_options,
+.dynamic_options {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  /* gap: 0.3rem; */
-  width: 100%;
-  /* padding: 30px;   */
+  gap: 0.5rem; /* Tighten spacing between options */
 }
 
-.static_option {
+.static_option,
+.dynamic_option {
   text-decoration: none;
-  color: black;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.static_option:last-child {
-  margin-bottom: 1rem;
-}
-
-.logo span {
-  display: none;
+.static_option:hover,
+.dynamic_option:hover {
+  background-color: #333;
+  color: #e3e8e8;
 }
 
 .icon_text {
-  color: white;
   display: flex;
   align-items: center;
-  padding: 0.25rem;
-  width: 100%;
-  /* margin-left: 4rem; */
-  /* font-size: 2px; */
-}
-
-.icon_text span {
-  display: none;
+  gap: 0.5rem; /* Tight spacing between icon and text */
 }
 
 .icon {
-  padding: 15px;
-  color: white;
+  color: #ffffff;
+  transition: color 0.3s ease;
 }
 
-.icon_1 {
-  font-size: 15px;
-}
-.dynamic_options {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-left: 4rem;
-  display: none;
+.static_option:hover .icon,
+.dynamic_option:hover .icon {
+  color: #ee4fce;
 }
 
-.dynamic_option {
-  text-decoration: none;
+.dynamic_option .MuiSvgIcon-root {
+  font-size: 1rem; /* Adjust the size as needed */
+  margin-right: 8px; /* Optional: Add some spacing between the icon and text */
+  color: white; /* Keep consistent with the theme */
+}
+.dynamic_option:hover .MuiSvgIcon-root {
+  color: #ee4fce; /* Keep consistent with the theme */
+}
+
+/* Profile Section */
+.profile {
   display: flex;
   align-items: center;
-  color: white;
-  transition: all linear 0.2s;
-  padding: 15px;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #333;
+  position: absolute;
+  bottom: 1rem; /* Place at the bottom of the sidebar */
+  left: 1rem;
+  right: 1rem;
+}
+.profile .profile-logout {
+  border-radius: 50%;
+  align-items: center;
+  padding: 0.25rem;
+}
+
+.profile .profile-logout:hover {
+  color: #ee4fce;
+  transform: scale(1.1);
+  transition: 0.2s all ease-in-out;
   cursor: pointer;
 }
 
-.profile {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0.3rem;
-  margin-top: auto;
-  margin-bottom: 0px;
-  max-height: fit-content;
-}
-
-.info {
-  display: none;
-  padding: 0 1.5rem;
-  color: white;
-}
-
-.line {
-  display: block;
-  border: 1px solid red;
-  width: 100%;
-  height: 1px;
-  font-weight: bold;
-  background: #0000;
-  margin-bottom: 0;
-  margin-top: auto;
-}
-
 .profile .image img {
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
-  margin-bottom: 15px;
 }
 
-#menu {
-  /* margin-right: 35px; */
-  font-size: 25px;
-  margin-bottom: 20px;
+.info p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+.info:hover .userNameProfile {
+  color: #ee4fce;
 }
 
-/* hr{
-    background: black;
-    color: black;
-    height: 2px;
-} */
-
-.main_box:hover {
-  width: 15rem;
-  z-index: 100;
-  font-size: small;
-}
-
-.main_box:hover .logo {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  margin-bottom: 3rem;
-  align-items: center;
-  justify-content: center;
-}
-
-.main_box:hover #logo {
-  width: 6rem;
-  margin: auto;
-  background-color: white;
-  /* margin-left: 5.5rem;     */
-}
-
-.main_box:hover .logo span {
-  display: block;
-  font-size: 1.9rem;
-  margin-left: 0;
-}
-
-.main_box:hover .dynamic_options {
-  display: flex;
-}
-
-.main_box:hover .inline_text {
-  display: block;
-  text-align: center;
-  transition: all 0.5s ease-in;
-}
-
-.main_box:hover .icon_text span {
-  display: block;
-}
-
-.main_box:hover .icon_text {
-  margin-left: 1rem;
-  transition: all 0.25s ease-in;
-}
-
-.main_box:hover .info {
-  display: block;
-}
-.main_box:hover .userEmail {
-  font-size: 0.8rem;
-}
-
-.main_box:hover .logout {
-  display: block;
-}
-
-.main_box:hover #pp {
-  margin-left: 2rem;
-}
-
-.main_box:hover .profile {
-  width: 100%;
-}
-
-.icon_text:hover {
-  transform: scale(1.05);
+.info .userEmail {
+  color: #888;
 }

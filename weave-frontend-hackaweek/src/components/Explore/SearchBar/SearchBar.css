@@ -1,0 +1,251 @@
+/* Container for Search Bar and Filters */
+
+.search-bar-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+/* Search Bar Styling */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #f4f4f4; /* Slightly darker grey for a subtle boundary */
+  border-radius: 8px;
+  padding: 12px;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.search-label-container {
+  display: flex;
+  align-items: center;
+  color: #333;
+  gap: 20px;
+}
+
+.search-icon {
+  font-size: 20px;
+  color: #333; /* Matches the text color */
+}
+
+.search-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  white-space: nowrap;
+}
+
+.search-input {
+  flex: 1;
+  padding: 8px;
+  border: 0px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f4f4f4;
+}
+
+.filter-button,
+.search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 12px;
+  gap: 5px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+/* Filter Button */
+.filter-button {
+  background: white; /* White background */
+  color: #333; /* Dark text */
+  border-radius: 0; /* No border radius */
+}
+
+/* Search Button */
+.search-button {
+  background-color: black; /* Black background */
+  color: white; /* White text and icon */
+  border-radius: 10%; /* Fully rounded button */
+  width: 48px; /* Ensure a circular button */
+  height: 48px; /* Ensure a circular button */
+}
+
+/* Icon Styling */
+.filter-button i,
+.search-button i {
+  font-size: 18px;
+  color: inherit; /* Inherit color from the button */
+}
+
+/* Hover Effects */
+.filter-button:hover {
+  background-color: #eee; /* Slightly lighter grey on hover */
+}
+
+.search-button:hover {
+  background-color: #333; /* Slightly lighter black on hover */
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  gap: 5px; /* Small gap between the buttons */
+}
+
+/* Filter Items Below the Search Bar */
+.filter-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter-item {
+  padding: 10px 16px;
+  border: thin solid #000; /* Black border */
+  border-radius: 100px; /* More rounded corners */
+  background-color: white; /* Default background color */
+  color: black; /* Default text color */
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for hover and active states */
+}
+
+.filter-item:hover {
+  background-color: #f0f0f0; /* Slightly darker background on hover */
+}
+
+.filter-item:active,
+.filter-item.clicked {
+  background-color: #000; /* Black background when clicked */
+  color: #ffffff; /* White text when clicked */
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Styles */
+.modal {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  font-size: 20px;
+  color: #333;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #555;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.filter-section h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.filter-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-item {
+  padding: 8px 12px;
+  border: 1px solid #333;
+  border-radius: 20px;
+  background-color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+  color: #333;
+}
+
+.filter-item.clicked {
+  background-color: #333;
+  color: #ffffff;
+}
+
+/* Modal Footer */
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.clear-button {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.apply-button {
+  background-color: #ff7f50;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.apply-button:hover {
+  background-color: #ff6347;
+}
+
+@media (max-width: 768px) {
+  .search-bar {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .filter-items {
+    justify-content: center;
+  }
+}

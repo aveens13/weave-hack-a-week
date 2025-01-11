@@ -1,0 +1,80 @@
+.top_nav{
+    background-color: white;
+    min-width: 95%;
+    margin: 1rem 1.5rem .5rem 1.5rem;
+    /* display: block; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    padding: 0.5rem;
+    border-radius: 10rem;
+    /* z-index: 1; */
+}
+
+.icons{
+    margin-right: 3rem;
+    display:flex;
+    gap:2.5rem;
+    
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.box{
+    padding: 0.4rem;
+    width: 35%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #E5E4E2;
+    border-radius: 3rem;
+        
+}
+
+#search{
+    padding:0rem;
+    font-size: 1rem;
+    margin-left: 1rem;
+    height: 95%;
+    width: 95%;    
+    background-color: #E5E4E2;
+    border: none;
+    outline: none;
+}
+
+.box > #search_icon{
+    margin-left: 0.5rem;
+}
+
+.settings{
+    position: fixed;
+    width: 10%;
+    top: 5%;
+    right: 5%;
+    background-color: black;
+    box-shadow: rgba(255, 255, 255, 0.5) 0px 4px 12px;
+    border-radius: 0.4rem;
+}
+.settings ul{
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.5rem;
+}
+.settings ul li{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.3rem 1rem;
+    border-bottom: 0.2px dotted #E5E4E2;
+    cursor: pointer;
+}
+.settings ul li:hover{
+    border-radius: 0.4rem;
+    background-color: rgba(63, 61, 61, 0.576);
+}

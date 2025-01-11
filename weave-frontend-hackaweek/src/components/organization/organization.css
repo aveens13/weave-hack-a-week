@@ -12,8 +12,8 @@
 
 .main-page-hero-organization .org-main-hero {
   display: flex;
-  margin: 2rem;
-  padding: 1rem;
+  /* margin: 2rem; */
+  /* padding: 1rem; */
   flex-direction: column;
   width: 100%;
 }
@@ -208,4 +208,9 @@
   color: rgb(42, 40, 40);
   border-radius: 0.2rem;
   background-color: #978dfd;
+}
+
+.supervisor-assign {
+  margin-top: 1rem;
+  padding: 1rem;
 }

@@ -1,0 +1,71 @@
+.explore-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: #f9f9f9; */
+  font-family: "Arial", sans-serif;
+}
+
+.explore-section-hero {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.explore-title {
+  font-size: 2.3rem;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 5px;
+}
+
+.explore-subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.projects-section,
+.liked-projects-section {
+  width: 100%;
+  margin: 20px auto 0;
+}
+
+.projects-heading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: flex-start; /* Ensures items align to the left */
+}
+
+.project-card {
+  flex: 1 1 calc(280px); /* Minimum width of 280px */
+  max-width: 280px; /* Prevents cards from expanding too much */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Style for the liked projects section */
+.liked-projects-section .projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: flex-start;
+}

@@ -1,0 +1,105 @@
+.project-card {
+  min-width: 250px;
+  max-width: 330px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  color: #111;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.project-poster {
+  position: relative;
+  height: 180px;
+}
+
+.tags-krishna {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 5px;
+}
+
+.tag {
+  background-color: #ff9f00;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 5px;
+  border-radius: 5px;
+}
+
+.project-info-krishna {
+  padding: 15px;
+}
+
+.languages-krishna-main {
+  font-size: 14px;
+  color: #111;
+  margin: 5px 0;
+}
+
+.project-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+  line-height: 1.4;
+}
+
+.authors {
+  font-size: 14px;
+  color: #111;
+  margin-top: 10px;
+}
+
+.like-section {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px; /* Increased space between the icon and the text */
+}
+
+.like-icon {
+  cursor: pointer;
+  font-size: 24px;
+  color: #111;
+  transition: color 0.3s ease;
+}
+
+.like-icon.liked {
+  color: #ee4fce; /* Changed to a more visible pinkish color */
+}
+
+.like-count {
+  font-size: 16px; /* Increased font size for visibility */
+  color: #111;
+}
+
+
+/* Add styles for the pin icon */
+.pin-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  border-radius: 50%; 
+  padding: 2px; /* Reduce padding for a smaller circle */
+  display: flex;
+  justify-content: center; /* Center the icon horizontally */
+  align-items: center; /* Center the icon vertically */
+  width: 24px; /* Smaller circle width */
+  height: 24px; /* Smaller circle height (same as width for a circle) */
+}
+
+.pin-icon-style {
+  font-size: 10px; /* Reduce the font size of the icon */
+  color: #ff9f00;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.pin-icon-style:hover {
+  transform: scale(1.2);
+}

@@ -1,0 +1,86 @@
+.main_card{
+    width: 100%;
+    height:100%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border-radius: 1.5rem;
+}
+
+.tags{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem;
+}
+.tags .meatball_menu{
+    margin-left: auto;
+    cursor: pointer;
+}
+.tag{
+    margin-left: 0.6rem;
+    width: fit-content;
+    border-radius: 2rem;
+    padding: 0.5rem;
+    background-color: lightblue;
+    color:blue;
+}
+
+.project_info {
+    cursor: pointer;
+    padding: 0.5rem;
+    display: block;
+    text-align: center;
+}
+
+.progress_bar{
+    /* margin:1rem; */
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}   
+
+.members{
+    margin:0.3rem;
+    display: flex;
+    padding: 1rem 1rem 0 1rem;
+}
+.members span img{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+.members .organization{
+    margin-left: auto;
+    display: flex;
+    height: 1.2rem;
+    padding: 0.1rem 0.3rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    align-items: center;
+    border-radius: 1rem;
+    justify-content: center;
+}
+.organization >p {
+    margin-left: 0.3rem;
+    font-size: 0.7rem;
+}
+
+.hide{
+    position: fixed;
+    background-color: rgba(193, 191, 191, 0.64);
+    display: none;
+    border-radius: 0.3rem;
+    padding: 0.2rem 0.8rem;
+}
+.members > span > img:hover + .hide{
+    display: block;
+}
+.members span::after{
+    content:"\ ";
+}
+.project_info > h3{
+    font-size: 1.7rem;
+    /* margin-bottom: 2rem; */
+}

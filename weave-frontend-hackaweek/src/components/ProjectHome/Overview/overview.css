@@ -1,0 +1,184 @@
+.project-info-hero{
+    display: flex;
+    flex-direction: column;
+}
+.project-info-hero .header{
+    display: flex;
+    align-items: center;
+}
+.header .button{
+    margin-left: auto;
+}
+.header button{
+    height: 3rem;
+    display: flex;
+    color: white;
+    align-items: center;
+    border: none;
+    background-color: #6969dd;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    padding: 0 1rem;
+}
+.project-info-hero > .info-div{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.info-div .priority-tag{
+    background-color: #323ee2;
+    color: white;
+    display: flex;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.6rem;
+    font-weight: 600;
+    border-radius: 0.3rem;
+    align-items: center;
+}
+
+.info-div .grey {
+    width: 10%;
+}
+.info-div .member-info{
+    height: 2rem;
+    cursor: pointer;
+    margin-right: 0.3rem;
+    padding: 0.2rem 0.8rem;
+    background-color: #f3f3f7;
+    display: flex;
+    border-radius: 1rem;
+    align-items: center;
+    transition: all 0.1s linear;
+}
+.info-div .member-info:hover{
+    transform: scale(1.03);
+}
+.member-info img{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+
+.member-info .name{
+    font-weight: 500;
+    padding: 0 1rem;
+}
+
+.info-div .link{
+    cursor: pointer;
+    color: blue;
+    font-size: 0.8rem;
+}
+.info-div .link:hover{
+    border-bottom: 1px solid #323ee2;
+}
+
+.project-announcements{
+    display: flex;
+    background-color: #f9f9fb;
+    border-radius: 0.4rem;
+    height: 100%;
+    overflow: hidden;
+    margin-bottom: 0.4rem;
+}
+
+.project-announcements .main-overview{
+    width: 80%;
+}
+.project-announcements .activity{
+    width: 25%;
+    background-color: white;
+    margin: 1rem;
+    border-radius: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+.activity h3{
+    height: 10%;
+}
+.announce{
+    margin-top: auto;
+    width: 90%;
+    /* background-color: #323ee2; */
+    height: 10%;
+    display: flex;
+}
+
+.activity .comment-section{
+    display: flex;
+    height: 80%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    justify-content: center;
+}
+.activity .comment-section::-webkit-scrollbar{
+    width: 0.4rem;
+    background-color: #f3f3f7;
+    border-radius: 0.6rem;
+}
+
+.comment-section::-webkit-scrollbar-thumb{
+    background-color: #6969dd ;
+    border-radius: 1rem;
+}
+.announce .icon{
+    position: absolute;
+    color: black;
+    right: 3%;
+    /* justify-self: center; */
+}
+.announce input{
+    width: 100%;
+    background-color: white;
+    border: none;
+    color: black;
+    border-radius: 0.6rem;
+    padding: 0.7rem 1rem;
+    margin-bottom: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+.announce .icon{
+    cursor: pointer;
+}
+
+.activity .message-body{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 100%;
+    border-bottom: 1px solid #f3f3f7;
+}
+.message-body .name-info{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.3rem 1rem;
+}
+.name-info p{
+    margin: 0 0.3rem;
+}
+
+.message-body .message {
+    background-color: #f3f3f7;
+    padding: 1rem;
+    border-radius: 0 1rem 1rem 1rem;
+    width: 80%;
+    margin-left: 3rem;
+}
+.message-body .name-info .supervisor{
+    background-color: #f88379;
+    padding: 0.2rem 0.6rem;
+    border-radius: 0.4rem;
+    color: white;
+}
+.message-body img{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
