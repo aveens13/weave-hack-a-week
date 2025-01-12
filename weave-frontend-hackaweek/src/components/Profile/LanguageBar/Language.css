@@ -1,0 +1,36 @@
+/* Container for the progress bar component */
+.progress-bar-container {
+    width: 60%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  /* Styling for each language item */
+  .language-item {
+    margin-bottom: 10px;
+  }
+  
+  /* Header for each language (name and percentage) */
+  .language-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 5%;
+  }
+  
+  /* Background of the progress bar */
+  .progress-bar-background {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    height: 10px;
+    overflow: hidden;
+    margin-bottom: 5%;
+  }
+  
+  /* Filled part of the progress bar */
+  .progress-bar-fill {
+    height: 100%;
+  }
+  

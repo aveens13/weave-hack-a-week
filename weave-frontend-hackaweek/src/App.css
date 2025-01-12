@@ -67,7 +67,7 @@
     transform: rotate(360deg);
   }
 }
-input[type="date"]::-webkit-calendar-picker-indicator {
+input[type='date']::-webkit-calendar-picker-indicator {
   background-color: #a2a2a23d;
   cursor: pointer;
   border-radius: 0.3rem;

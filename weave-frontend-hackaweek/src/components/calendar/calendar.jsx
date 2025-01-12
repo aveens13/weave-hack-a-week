@@ -1,83 +1,86 @@
-import { useEffect, useState } from "react";
-import FullCalendar from "@fullcalendar/react";
-import { formatDate } from "@fullcalendar/core";
-import dayGridPlugin from "@fullcalendar/daygrid";
-import timeGridPlugin from "@fullcalendar/timegrid";
-import interactionPlugin from "@fullcalendar/interaction";
-import listPlugin from "@fullcalendar/list";
-import { Box, List, ListItem, ListItemText, Typography } from "@mui/material";
-import Modal from "../Modal/Modal";
-import AddTask from "../ProjectHome/Addtask";
+import { useEffect, useState } from 'react';
+import FullCalendar from '@fullcalendar/react';
+import { formatDate } from '@fullcalendar/core';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import interactionPlugin from '@fullcalendar/interaction';
+import listPlugin from '@fullcalendar/list';
+import { Box, List, ListItem, ListItemText, Typography } from '@mui/material';
+import Modal from '../Modal/Modal';
+import AddTask from '../ProjectHome/Addtask';
+import './calendar.css';
 
 const Calendar = (props) => {
   const [currentEvents, setCurrentEvents] = useState([]);
   const [isShowing, setIsShowing] = useState(false);
-  const [Selected, setSelected] = useState({});
-
-  // useEffect(() => {
-  //   let initial_data = JSON.parse(localStorage.getItem('Events') || '[]');
-  //   console.log(initial_data);
-  //   setCurrentEvents(initial_data);
-  // }, []);
+  const [selected, setSelected] = useState({});
 
   const handleDateClick = (selected) => {
     setSelected(selected);
     setIsShowing(true);
   };
 
-  async function handleAddTask(formdata) {
-    let data = JSON.parse(formdata);
+  const handleAddTask = (formdata) => {
+    const data = JSON.parse(formdata);
     const title = data.title;
-    const calendarApi = Selected.view.calendar;
+    const calendarApi = selected.view.calendar;
+
     calendarApi.unselect();
     if (title) {
-      let event = {
-        id: `${Selected.startStr}-${title}`,
+      const event = {
+        id: `${selected.startStr}-${title}`,
         title,
-        start: Selected.startStr,
+        start: selected.startStr,
         end: data.deadline,
-        allDay: Selected.allDay,
+        allDay: selected.allDay,
       };
+
       calendarApi.addEvent(event);
       setIsShowing(false);
-      // localStorage.setItem('Events', JSON.stringify(calendarApi.getEvents()));
-      setCurrentEvents(calendarApi.getEvents());
+
+      const updatedEvents = calendarApi.getEvents();
+      localStorage.setItem('Events', JSON.stringify(updatedEvents));
+      setCurrentEvents(updatedEvents);
     }
-  }
+  };
 
   const handleEventClick = (selected) => {
     const calendarApi = selected.view.calendar;
+
     if (
       window.confirm(
-        `Are you sure you want to delete the event '${selected.event.title}'`
+        `Are you sure you want to delete the event '${selected.event.title}'?`
       )
     ) {
       selected.event.remove();
-      // localStorage.setItem('Events', Json.stringify(calendarApi.getEvents()));
+
+      const updatedEvents = calendarApi.getEvents();
+      localStorage.setItem('Events', JSON.stringify(updatedEvents));
+      setCurrentEvents(updatedEvents);
     }
   };
 
   return (
-    <Box m="20px">
-      <Box display="flex" justifyContent="space-between">
-        {/* CALENDAR SIDEBAR */}
+    <Box m='0px'>
+      <Box display='flex' justifyContent='space-between'>
+        {/* Calendar Sidebar */}
         <Box
-          flex="1 1 20%"
-          backgroundColor="black"
-          p="15px"
-          borderRadius="4px"
-          color="white"
+          flex='1 1 20%'
+          backgroundColor='#111'
+          p='15px'
+          borderRadius='8px'
+          color='#fff'
         >
-          <Typography variant="h5">Events</Typography>
+          <Typography variant='h5'>Events</Typography>
           <List>
             {currentEvents.map((event) => (
               <ListItem
                 key={event.id}
                 sx={{
-                  backgroundColor: "white",
-                  margin: "10px 0",
-                  color: "black",
-                  borderRadius: "5px",
+                  backgroundColor: 'white',
+                  margin: '10px 0',
+                  color: 'black',
+                  borderRadius: '8px',
                 }}
               >
                 <ListItemText
@@ -85,9 +88,9 @@ const Calendar = (props) => {
                   secondary={
                     <Typography>
                       {formatDate(event.start, {
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
                       })}
                     </Typography>
                   }
@@ -97,10 +100,17 @@ const Calendar = (props) => {
           </List>
         </Box>
 
-        {/* CALENDAR */}
-        <Box flex="1 1 100%" ml="15px">
+        {/* Main Calendar */}
+        <Box
+          flex='1 1 100%'
+          ml='15px'
+          sx={{
+            borderRadius: '10px', // Apply border-radius to calendar container
+            overflow: 'hidden',
+          }}
+        >
           <FullCalendar
-            height="75vh"
+            height='75vh'
             plugins={[
               dayGridPlugin,
               timeGridPlugin,
@@ -108,55 +118,61 @@ const Calendar = (props) => {
               listPlugin,
             ]}
             headerToolbar={{
-              left: "prev,next today",
-              center: "title",
-              right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth",
+              left: 'prev,next today',
+              center: 'title',
+              right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth',
             }}
-            initialView="dayGridMonth"
-            editable={true}
-            selectable={true}
-            selectMirror={true}
-            dayMaxEvents={true}
+            initialView='dayGridMonth'
+            editable
+            selectable
+            selectMirror
+            dayMaxEvents
             select={handleDateClick}
             eventClick={handleEventClick}
             eventsSet={(events) => setCurrentEvents(events)}
             initialEvents={[
               {
                 id: 1,
-                title: "Backend",
-                start: "2023-05-26",
-                end: "2023-05-26",
+                title: 'Database',
+                start: '2025-01-14',
+                end: '2025-01-19',
               },
               {
                 id: 2,
-                title: "Frontend",
-                start: "2023-05-24",
-                end: "2023-05-24",
+                title: 'File Uploader',
+                start: '2025-01-09',
+                end: '2025-01-12',
               },
               {
                 id: 3,
-                title: "Database",
-                start: "2023-05-20",
-                end: "2023-05-22",
+                title: 'Frontend',
+                start: '2024-12-29',
+                end: '2025-01-03',
               },
               {
                 id: 4,
-                title: "Design and UI",
-                start: "2023-05-15",
-                end: "2023-05-15",
-              },
-              {
-                id: 5,
-                title: "File Uploader",
-                start: "2023-05-18",
-                end: "2023-05-18",
+                title: 'Backend',
+                start: '2025-01-24',
+                end: '2025-01-27',
               },
             ]}
+            customButtons={{
+              prev: {
+                text: '<',
+                click: () => {},
+              },
+            }}
+            buttonText={{
+              today: 'Today',
+              month: 'Month',
+              week: 'Week',
+              day: 'Day',
+              list: 'List',
+            }}
           />
         </Box>
       </Box>
       <Modal open={isShowing} close={() => setIsShowing(false)}>
-        {" "}
         <AddTask handleAddTask={handleAddTask} project={props.project} />
       </Modal>
     </Box>

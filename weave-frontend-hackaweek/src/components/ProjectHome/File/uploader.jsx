@@ -15,7 +15,7 @@ export default function Uploader({ close, project }) {
     formData.append("file", file);
 
     const response = await fetch(
-      `/api/fileupload/${project.projectId}/${user.data.userId}`,
+      `/api/fileupload/${project.projectId}/${user.data.userId}/${null}`,
       {
         method: "POST",
         body: formData,

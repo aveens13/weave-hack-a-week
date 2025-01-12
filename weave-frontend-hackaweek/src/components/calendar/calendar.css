@@ -1,0 +1,36 @@
+/* Global Styling for Calendar Buttons */
+.fc-toolbar button {
+  background-color: #c41d7f !important; /* Set button background color */
+  color: #fff !important; /* Set button text color */
+  border: none !important; /* Remove borders */
+  border-radius: 4px !important;
+  margin: 1px !important; /* Add slight rounding */
+}
+
+.fc .fc-button:disabled {
+  opacity: 100;
+}
+
+.fc-button-group {
+  gap: 1px !important;
+}
+
+.fc-toolbar button:hover {
+  background-color: #a51b6f !important; /* Darker hover background color */
+}
+
+.fc-toolbar button:active {
+  background-color: #901760 !important; /* Darker active state */
+}
+
+.fc-toolbar .fc-today-button:hover {
+  background-color: #a51b6f !important; /* Slightly lighter on hover */
+}
+
+/* Styling Calendar Events */
+.fc-event {
+  background-color: #1d333f !important; /* Event background color */
+  color: #fff !important; /* Event text color */
+  border: none !important; /* Remove event borders */
+  border-radius: 4px; /* Add rounding for events */
+}

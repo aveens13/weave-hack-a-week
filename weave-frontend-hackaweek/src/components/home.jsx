@@ -2,11 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./home.css";
 import { useNavigate } from "react-router-dom";
 import AddIcon from "@mui/icons-material/Add";
-import {
-  AccessTimeFilledOutlined,
-  FilterListOutlined,
-  ArrowDropDown,
-} from "@mui/icons-material";
+import { useQuery } from "@tanstack/react-query";
 import ProjectCard from "./Explore/ProjectCard/ProjectCard";
 import CalendarSection from "./Dashboard/calendar";
 import DashboardTaskDue from "./Dashboard/dashboard_task_due";
@@ -37,11 +33,30 @@ function Home(props) {
   useEffect(() => {
     fetch(`/api/project/${user.data.userId}`).then((response) => {
       response.json().then((e) => {
-        setProjects(e);
-        console.log(e);
+        const updateProjects = e.map((project) => ({
+          ...project,
+          isPinned: user.data.pinnedProjects.some(
+            (pinned) => pinned.projectId === project.projectId
+          ),
+        }));
+        setProjects(updateProjects);
+        console.log(updateProjects);
       });
     });
   }, [create]);
+
+  // const { data: projects = [], isLoading: projectsLoading } = useQuery({
+  //   queryKey: ["projects", user.data.userId],
+  //   queryFn: async () => {
+  //     const response = await fetch(`/api/project/${user.data.userId}`);
+  //     if (!response.ok) {
+  //       throw new Error("Error fetching projects");
+  //     }
+  //     console.log(response.json());
+
+  //     return response.json();
+  //   },
+  // });
 
   useEffect(() => {
     fetch(`/api/${user.data.userId}/tasks`).then((response) => {
@@ -102,10 +117,31 @@ function Home(props) {
     setProjects((prevProjects) =>
       prevProjects.map((project) =>
         project.projectId === projectId
-          ? { ...project, pinned: !project.pinned }
+          ? { ...project, isPinned: !project.isPinned }
           : project
       )
     );
+
+    fetch(`/api/pinproject/${user.data.userId}/${projectId}`).then((res) => {
+      if (res.ok) {
+        res.json().then((e) => {
+          console.log(e);
+          api.info({
+            message: `Pinned`,
+            description: "Added to your Pinned Projects",
+            placement: "topRight",
+          });
+        });
+      } else {
+        console.log("Not pinned");
+        api.info({
+          message: `Already Pinned`,
+          description:
+            "This Project is already pinned as your pinned projects.",
+          placement: "topRight",
+        });
+      }
+    });
   };
 
   function handleClick(id) {
@@ -121,31 +157,39 @@ function Home(props) {
         <div className="dashboard_project_cards">
           {/* Pinned Projects */}
           <div className="dashboard_pinned_projects">
-            {projects.some((project) => project.pinned) && (
+            {projects.some((project) => project.isPinned) && (
               <div className="dashboard_pinned_title">
                 <h3>Pinned Projects</h3>
-                <button
-                  id="create_project_pinned"
+                <Button
+                  // id="create_project_pinned"
+                  color="default"
+                  variant="solid"
                   onClick={() => setCreate(true)}
                 >
                   <AddIcon /> New Project
-                </button>
+                </Button>
               </div>
             )}
             <div className="dashboard_pinned_cards">
               {projects
-                .filter((project) => project.pinned)
+                .filter((project) => project.isPinned)
                 .map((project) => (
                   <ProjectCard
                     className="project_card_dashboard"
                     key={project.projectId}
-                    // tags={project.tags}
+                    tags={project.tags.split(",")}
                     // languages={project.languages}
                     title={project.projectTitle}
-                    // authors={project.members.map((member) => member.name)}
+                    authors={project.members.map((member) => member.name)}
                     // posterUrl={project.image}
-                    // pinned={project.pinned}
-                    onPinToggle={() => handlePinToggle(project.projectId)}
+                    pinned={project.isPinned}
+                    showLike={false}
+                    // onPinToggle={() => handlePinToggle(project.projectId)}
+                    handleClick={(id) => {
+                      props.handleClick(id);
+                      navigate("/project");
+                    }}
+                    projectId={project.projectId}
                   />
                 ))}
             </div>
@@ -154,19 +198,19 @@ function Home(props) {
           <div className="dashboard_unpinned_projects">
             <div className="dashboard_unpinned_title">
               <h3>My Projects</h3>
-              {!projects.some((project) => project.pinned) && (
-                <button
-                  id="create_project_pinned"
+              {!projects.some((project) => project.isPinned) && (
+                <Button
+                  color="default"
+                  variant="solid"
                   onClick={() => setCreate(true)}
                 >
-                  {" "}
-                  <AddIcon /> New Project{" "}
-                </button>
+                  <AddIcon /> New Project
+                </Button>
               )}
             </div>
             <div className="dashboard_unpinned_cards">
               {projects
-                .filter((project) => !project.pinned)
+                .filter((project) => !project.isPinned)
                 .map((project) => (
                   <>
                     <ProjectCard
@@ -177,7 +221,8 @@ function Home(props) {
                       title={project.projectTitle}
                       authors={project.members.map((member) => member.name)}
                       // posterUrl={project.image}
-                      // pinned={project.pinned}
+                      pinned={project.isPinned}
+                      showLike={false}
                       onPinToggle={() => handlePinToggle(project.projectId)}
                       handleClick={(id) => {
                         props.handleClick(id);
@@ -193,7 +238,7 @@ function Home(props) {
       </div>
       <div className="dashboard_tasks_calendar">
         <DashboardTaskDue tasks={task} />
-        <CalendarSection />
+        <CalendarSection tasks={task} />
       </div>
       <Modal
         title="Create a project"

@@ -58,8 +58,9 @@
   margin-bottom: 15px;
 }
 
-.project-card:hover {
+.project-card:has(.project-info-krishna:hover) {
   transform: translateY(-5px);
+  cursor: pointer;
 }
 
 /* Style for the liked projects section */

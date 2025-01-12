@@ -1,72 +1,66 @@
-.dashboard_task_due_main{
-    background-color: white;
-    display:flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    height: 29rem;
-    width: 21rem;
-    /* border: 1px solid black; */
-    border-radius: 20px; 
-    padding: 0.1rem;
-    box-shadow: #f9f9f9;
+.dashboard_task_due_main {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 29rem;
+  width: 21rem;
+  /* border: 1px solid black; */
+  border-radius: 20px;
+  /* padding: 0.1rem; */
+  box-shadow: #f9f9f9;
 }
 
-.task_due_header_main_main{
-    display:flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width:90%;
-    padding: 0.1rem;
+.task_due_header_main_main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90%;
+  padding: 0.1rem;
 }
 
-.task_due_header_main{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 98%;
-    height: 18%;
+.task_due_header_main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 98%;
+  height: 18%;
 }
 
-
-
-.task_due_header_1{
-    display:flex;
-    justify-content: flex-start;
-    background-color: white;
-    width: 100%;
-    padding: 0.5rem;
-    margin-top: 0.7rem;
-    margin-bottom: 1px;
-    font-size: 1.2rem;
+.task_due_header_1 {
+  display: flex;
+  justify-content: flex-start;
+  background-color: white;
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.7rem;
+  margin-bottom: 1px;
+  font-size: 1.2rem;
 }
 
-
-.dropdown{
-    background-color:  white;
-    color: black;
+.dropdown {
+  background-color: white;
+  color: black;
 }
-.task_due_header_2{
-   
-    display:flex;
-    justify-content: flex-end;
-    width: 100%;
-    padding: 0.5rem;
-    margin-top: 0.7rem;
-    margin-bottom: 1px;
-
+.task_due_header_2 {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.7rem;
+  margin-bottom: 1px;
 }
 
-.divider{
-    border-top: 0.01rem solid #111;
-    background-color: #111;
-    /* border-radius: 10px; */
-    width:92%;
-
+.divider {
+  border-top: 0.01rem solid #111;
+  background-color: #111;
+  /* border-radius: 10px; */
+  width: 92%;
 }
-.divider-div .content-div{
-  margin:0;
-  width: 120%; 
+.divider-div .content-div {
+  margin: 0;
+  width: 120%;
   color: #111;
 }
 
@@ -74,23 +68,20 @@
   width: 100%;
   scrollbar-color: #000000 #ffffff;
 } */
-.task_due_content_main_main{
+.task_due_content_main_main {
   padding: 0.5rem;
-} 
-
-
+}
 
 .task_due_content_main_main {
-  overflow-y: auto; 
-  scrollbar-width: thin; 
+  overflow-y: auto;
+  scrollbar-width: thin;
 
-  
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer and Edge */
 
   &::-webkit-scrollbar {
     width: 10px; /* Adjust width as needed */
-    background-color: rgba(0, 0, 0, 0.05); /* Light gray background */ 
+    background-color: rgba(0, 0, 0, 0.05); /* Light gray background */
   }
 
   &::-webkit-scrollbar-thumb {
@@ -99,34 +90,30 @@
   }
 }
 
-
-
-
-.task_due_content_main{
-    flex:1;
-    /* border: 0.05rem solid #f9f9f9; */
-    border-radius: 10px;
-    height: 5rem;
-    min-width: 16.5rem;
-    /* width: 16.5rem; */
-    /* width: fit-content; */
-    background-color: #f9f9f9;
-    padding:1rem; 
-    display:flex;
-    flex-direction: column;
-    margin: 0.3rem 0.6rem 0.8rem 0.6rem;
-
+.task_due_content_main {
+  flex: 1;
+  /* border: 0.05rem solid #f9f9f9; */
+  border-radius: 10px;
+  height: 5rem;
+  min-width: 16.5rem;
+  /* width: 16.5rem; */
+  /* width: fit-content; */
+  background-color: #f9f9f9;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0.3rem 0.6rem 0.8rem 0.6rem;
 }
 
-.task_due_content_upper{
-    flex:1;
-    font-size: 0.6rem;
-    color: black;
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-left: 0.3rem;
-    margin-right: 0.3rem;
+.task_due_content_upper {
+  flex: 1;
+  font-size: 0.6rem;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
 }
 
 /* .task_due_content_upper_1{
@@ -137,17 +124,17 @@
     justify-content: space-between;
 } */
 
-.task_due_content_upper_left{
-    flex:1;
-    display:flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width:100%;
+.task_due_content_upper_left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .task_due_content_title {
   display: -webkit-box;
-  -webkit-line-clamp: 1; 
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -155,117 +142,114 @@
   text-align: left;
 }
 
-.task_due_content_project{
-    display:flex;
-    justify-content: flex-start;
-    font-size: 0.8rem;
-    color:  orange;
+.task_due_content_project {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 0.8rem;
+  color: orange;
 }
 
-.task_due_content_upper_right{
-    display:flex;
-    justify-content: flex-end;
-    align-items: center;
-    /* margin-right: 1rem; */
-    margin-left: 1rem;
+.task_due_content_upper_right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* margin-right: 1rem; */
+  margin-left: 1rem;
 }
 
-.content_divider{
-
+.content_divider {
 }
 
-.task_due_content_lower{
-  flex:1;
+.task_due_content_lower {
+  flex: 1;
   font-size: 0.7rem;
   color: black;
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-left: 0.3rem;
   margin-right: 0.3rem;
-
 }
 
-.task_due_content_deadline{
+.task_due_content_deadline {
   flex: 1;
   display: flex;
   justify-content: flex-start;
 }
 
-.task_due_content_assigned{
-
+.task_due_content_assigned {
 }
-
 
 /* Wrapper for the custom checkbox */
 .custom-checkbox {
-    display:flex;
-    /* display: inline-block;
+  display: flex;
+  /* display: inline-block;
     position: relative; */
-    vertical-align: middle; /* Aligns the checkbox with text */
-    margin-top: 0px; /*Adjust this to align it with the text */
-  }
-  
-  /* Hide default checkbox */
-  input[type="checkbox"] {
-    display: none;
-  }
-  
-  /* Label and checkmark styling */
-  label {
-    cursor: pointer;
-  }
-  
-  .checkmark {
-    padding: 2.5px;
-    width: 12px;
-    height: 12px;
-    background-color: white;
-    border-radius: 50%; /* Circular shape */
-    border: 2px solid #ddd;
-    display: inline-block;
-    position: relative;
-    transition: all 0.3s ease;
-  }
-  
-  /* Styling for checked state */
-  input[type="checkbox"]:checked + label .checkmark {
-    background-color: orange  ; /* Blue background */
-    border-color: orange;
-  }
-  
-  input[type="checkbox"]:checked + label .checkmark::after {
-    /* padding: 5px; */
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 12px; /* Adjust if needed */
-    height: 6px; /* Adjust if needed */
-    border: solid white; /* Set the color of the checkmark */
-    border-width: 0.5px 0.5px 0px 0px;
-    transform: translate(-50%, -50%) rotate(135deg); /* Correct rotation for the "check" */
-    transform-origin: center; /* Ensure rotation occurs around the center */
-    display: block; /* Ensure the checkmark is visible */
+  vertical-align: middle; /* Aligns the checkbox with text */
+  margin-top: 0px; /*Adjust this to align it with the text */
 }
 
-.custom-checkbox input[type="checkbox"]:checked ~ .task_due_content_upper_left .task_due_content_title {
+/* Hide default checkbox */
+input[type="checkbox"] {
+  display: none;
+}
+
+/* Label and checkmark styling */
+label {
+  cursor: pointer;
+}
+
+.checkmark {
+  padding: 2.5px;
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%; /* Circular shape */
+  border: 2px solid #ddd;
+  display: inline-block;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Styling for checked state */
+input[type="checkbox"]:checked + label .checkmark {
+  background-color: orange; /* Blue background */
+  border-color: orange;
+}
+
+input[type="checkbox"]:checked + label .checkmark::after {
+  /* padding: 5px; */
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px; /* Adjust if needed */
+  height: 6px; /* Adjust if needed */
+  border: solid white; /* Set the color of the checkmark */
+  border-width: 0.5px 0.5px 0px 0px;
+  transform: translate(-50%, -50%) rotate(135deg); /* Correct rotation for the "check" */
+  transform-origin: center; /* Ensure rotation occurs around the center */
+  display: block; /* Ensure the checkmark is visible */
+}
+
+.custom-checkbox
+  input[type="checkbox"]:checked
+  ~ .task_due_content_upper_left
+  .task_due_content_title {
   text-decoration: line-through;
 }
 
-  
-  /* Optional: Adjust container margin to fine-tune alignment */
-  .task_due_content_lower {
-    display: flex;
-    align-items: center; /* Align the checkbox and text vertically */
-    justify-content: space-between; /* Add space between text and checkbox */
-  }
-  
-  .task_due_content_deadline {
-    flex: 1; /* Ensures the deadline text takes up space */
-  }
-  
-  .task_due_content_assigned {
-    margin-left: 8px; /* Space between text and checkbox */
-  }
-  
+/* Optional: Adjust container margin to fine-tune alignment */
+.task_due_content_lower {
+  display: flex;
+  align-items: center; /* Align the checkbox and text vertically */
+  justify-content: space-between; /* Add space between text and checkbox */
+}
+
+.task_due_content_deadline {
+  flex: 1; /* Ensures the deadline text takes up space */
+}
+
+.task_due_content_assigned {
+  margin-left: 8px; /* Space between text and checkbox */
+}

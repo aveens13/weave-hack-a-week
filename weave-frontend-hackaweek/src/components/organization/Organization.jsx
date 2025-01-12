@@ -217,7 +217,7 @@ export default function Organization() {
         </div>
       </div>
       <Modal open={isModal} footer="" onCancel={() => setIsmodal(false)}>
-        <Call />
+        <Call close={() => setIsmodal(false)} />
       </Modal>
       <Modal open={isInfotab} footer="" onCancel={() => setIsinfotab(false)}>
         <ProjectSubmissionCard

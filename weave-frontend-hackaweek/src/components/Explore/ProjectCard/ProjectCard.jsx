@@ -11,6 +11,7 @@ const ProjectCard = ({
   title = "Untitled Project",
   authors = [{ name: "John" }],
   posterUrl = "../../../public/3.jpg",
+
   onLikeToggle,
   liked = false,
   likeCount = 0,
@@ -21,6 +22,7 @@ const ProjectCard = ({
   handleClick,
   projectId,
 }) => {
+  const randomNum = Math.floor(Math.random() * 5);
   return (
     <div className="project-card">
       <div
@@ -30,7 +32,6 @@ const ProjectCard = ({
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        onClick={() => handleClick(projectId)}
       >
         {tags && (
           <div className="tags-krishna">
@@ -52,7 +53,10 @@ const ProjectCard = ({
           </div>
         )}
       </div>
-      <div className="project-info-krishna">
+      <div
+        className="project-info-krishna"
+        onClick={() => handleClick(projectId)}
+      >
         <p className="languages-krishna-main">{languages.join(", ")}</p>
         <h3 className="project-title">{title}</h3>
         <p className="authors">

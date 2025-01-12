@@ -14,7 +14,7 @@ function App() {
     fetch("/api/v1/user/verifytoken").then((response) => {
       if (response.ok) {
         response.json().then((result) => {
-          console.log(result);
+          console.log("User Data:", result);
           setState("login");
           setUserData(result);
         });

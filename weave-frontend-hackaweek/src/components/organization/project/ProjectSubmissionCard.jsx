@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Badge, Button, Avatar, Tooltip, Input, message } from "antd";
+import pdf from "../../../assets/pdf.svg";
+import docx from "../../../assets/docx.png";
+import jpeg from "../../../assets/photo.png";
+import "../../ProjectHome/File/file.css";
+import xlsx from "../../../assets/xlsx.png";
 import CheckCircleOutlinedIcon from "@mui/icons-material/CheckCircleOutlined";
 import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 import MapsUgcOutlinedIcon from "@mui/icons-material/MapsUgcOutlined";
@@ -14,7 +19,19 @@ export default function ProjectSubmissionCard({
   const [messageApi, contextHolder] = message.useMessage();
   const [userAction, setUseraction] = useState("comment");
   const [supervisor, setSupervisor] = useState(null);
+  const [proposal, setProposal] = useState(null);
   //   useEffect(setUseraction("comment"), [info]);
+
+  //Fetch the files
+  useEffect(() => {
+    setProposal(null);
+    fetch(`/api/fileproposal/${infoProject.projectId}`).then((result) => {
+      result.json().then((e) => {
+        console.log(e.data);
+        setProposal(e.data);
+      });
+    });
+  }, [infoProject?.projectId]);
 
   const handleAccept = () => {
     if ((supervisor == "") | (supervisor == null)) {
@@ -25,6 +42,22 @@ export default function ProjectSubmissionCard({
     } else {
       console.log(supervisor);
     }
+  };
+
+  //Download the file
+  const downloadFileClicked = (id) => {
+    fetch(`/api/file/${id}`)
+      .then((result) => {
+        const fileName = result.headers.get("Content-Disposition");
+        return result.blob().then((blob) => ({ fileName, blob }));
+      })
+      .then(({ fileName, blob }) => {
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = fileName;
+        link.click();
+        URL.revokeObjectURL(link.href);
+      });
   };
   return (
     <div className="card-submit-hero-main">
@@ -166,6 +199,32 @@ export default function ProjectSubmissionCard({
             </Button>
           </div>
         </div>
+        {proposal && userAction == "attachment" ? (
+          <ul
+            className="file-items"
+            onClick={() => downloadFileClicked(proposal.fileId)}
+          >
+            <li className="file--name">
+              {proposal.fileType == "application/pdf" ? (
+                <img src={pdf} alt="" />
+              ) : proposal.fileType == "docx" ? (
+                <img src={docx} alt="" />
+              ) : proposal.fileType == "xlsx/excel" ? (
+                <img src={xlsx} alt="" />
+              ) : (
+                <img src={jpeg} alt="" />
+              )}
+              <div>
+                {proposal.fileName?.length > 10
+                  ? `${proposal.fileName.slice(0, 10)}...`
+                  : proposal.fileName}
+              </div>
+            </li>
+            <li>{proposal.fileType}</li>
+          </ul>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );

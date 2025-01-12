@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import Member from "../../CreateProject/Member";
 import { UserContext } from "../../../App";
-import { Input, Timeline } from "antd";
+import { Input, Timeline, Button } from "antd";
 const { TextArea } = Input;
 export default function Call(props) {
   const user = React.useContext(UserContext);
-
+  const [buttonLoader, setButtonloader] = useState(false);
   // Handle the form
   const handleForm = async (event) => {
+    setButtonloader(true);
     event.preventDefault();
     const form = event.currentTarget;
     const formData = new FormData(form);
@@ -22,8 +23,12 @@ export default function Call(props) {
       },
       body: formDataJsonString,
     });
-    // props.close();
-    console.log(response);
+
+    response.json().then((e) => {
+      setButtonloader(false);
+      props.close();
+      console.log(e);
+    });
   };
   return (
     <div className="create_projects_main">
@@ -67,7 +72,15 @@ export default function Call(props) {
             />
           </div>
           <div className="create-button">
-            <input type="submit" value="Call" />
+            <Button
+              color="default"
+              variant="solid"
+              type="primary"
+              htmlType="submit"
+              loading={buttonLoader}
+            >
+              Call
+            </Button>
           </div>
         </form>
       </div>

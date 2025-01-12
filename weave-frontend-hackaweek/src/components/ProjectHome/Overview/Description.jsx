@@ -7,12 +7,13 @@ import { ModeCommentTwoTone } from "@mui/icons-material";
 import Textarea from "./message_component/text_area";
 import { UploadOutlined } from "@ant-design/icons";
 import { Button, Space, Upload, Modal } from "antd";
+import { UserContext } from "../../../App";
 
 export default function Description({ project, taskInfo }) {
   const [open, setOpen] = useState(false);
-  const [info, setInfo] = useState("");
+  const [info, setInfo] = useState('');
   const [confirmLoading, setConfirmLoading] = useState(false);
-
+  const user = React.useContext(UserContext);
   //For modal
   const showModal = () => {
     setOpen(true);
@@ -23,9 +24,9 @@ export default function Description({ project, taskInfo }) {
     setConfirmLoading(true);
     console.log(info);
     fetch(`/api/update/${project.projectId}`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         description: info,
@@ -43,25 +44,25 @@ export default function Description({ project, taskInfo }) {
     }, 2000);
   };
   const handleCancel = () => {
-    console.log("Clicked cancel button");
+    console.log('Clicked cancel button');
     setOpen(false);
   };
 
   return (
-    <div className="description--hero">
+    <div className='description--hero'>
       {project.description ? (
-        <div className="project-brief">
-          <div className="wrapper-brief">
-            <div className="image-section">
-              <img src={image} alt="" />
+        <div className='project-brief'>
+          <div className='wrapper-brief'>
+            <div className='image-section'>
+              <img src={'../../../../public/5.jpg'} alt='' />
             </div>
-            <div className="brief-section">
-              <h2>Project Brief</h2>
+            <div className='brief-section'>
+              <h2 style={{ margin: 16 }}>Project Brief</h2>
               <p>{project.description}</p>
-              <div className="file-section">
+              <div className='file-section'>
                 <ul>
                   <li>
-                    <img src={pdf} alt="" />
+                    <img src={pdf} alt='' />
                     <p>Weave-Proposal.pdf</p>
                   </li>
                 </ul>
@@ -70,24 +71,27 @@ export default function Description({ project, taskInfo }) {
           </div>
         </div>
       ) : (
-        <div className="key-resources">
+        <div className='key-resources'>
           <h3>Key Resources</h3>
-          <div className="resource--card">
-            <div className="image-div">
-              <img src={document} alt="" />
+          <div className='resource--card'>
+            <div className='image-div'>
+              <img src={document} alt='' />
             </div>
-            <div className="add-items">
+            <div className='add-items'>
               <p>
                 Allign your team with shared vision with a project brief and
                 supporting files.
               </p>
-              <div className="add-buttons">
-                <button className="create" onClick={showModal}>
+              <div className='add-buttons'>
+                <button className='create' onClick={showModal}>
                   Create Project brief
                 </button>
                 <Upload
-                  action={`/api/fileupload/${project.projectId}`}
+
+
+                  action={`/api/fileupload/${project.projectId}/${user.data.userId}/proposal`}
                   listType="picture"
+
                   maxCount={1}
                 >
                   <Button icon={<UploadOutlined />}>Upload Proposal</Button>
@@ -97,20 +101,20 @@ export default function Description({ project, taskInfo }) {
           </div>
         </div>
       )}
-      <div className="completed-tasks">
+      <div className='completed-tasks'>
         <h3>Completed Tasks</h3>
 
         <ul>
           {taskInfo.map(
             (task) =>
-              task.status === "completed" && (
+              task.status === 'completed' && (
                 <li>
-                  <div className="card-completed-task">
-                    <p className="card-title">{task.title}</p>
+                  <div className='card-completed-task'>
+                    <p className='card-title'>{task.title}</p>
                     <p>{task.info}</p>
-                    <div className="footer-section">
+                    <div className='footer-section'>
                       <p>{task.name.name}</p>
-                      <div className="comments-hero">
+                      <div className='comments-hero'>
                         <ModeCommentTwoTone />
                       </div>
                     </div>
@@ -121,7 +125,7 @@ export default function Description({ project, taskInfo }) {
         </ul>
       </div>
       <Modal
-        title="Project Description"
+        title='Project Description'
         open={open}
         onOk={handleOk}
         confirmLoading={confirmLoading}
@@ -133,7 +137,7 @@ export default function Description({ project, taskInfo }) {
   );
 }
 
-import React from "react";
+import React from 'react';
 
 // const App: React.FC = () => (
 //   <Space direction="vertical" style={{ width: '100%' }} size="large">

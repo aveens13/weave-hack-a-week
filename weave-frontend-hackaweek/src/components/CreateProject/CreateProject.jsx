@@ -16,7 +16,7 @@ export default function CreateProject(props) {
       label: "Personal Project",
     },
   ]);
-
+  const [loading, setLoading] = useState(false);
   // Run this code only once when the component mounts or when `props.notificationforcall.data` changes
   useEffect(() => {
     if (props.notificationforcall?.data) {
@@ -76,6 +76,7 @@ export default function CreateProject(props) {
   }
   // Handle the form
   const handleForm = async (event) => {
+    setLoading(true);
     console.log("called");
     event.preventDefault();
     const form = event.currentTarget;
@@ -95,8 +96,11 @@ export default function CreateProject(props) {
       },
       body: formDataJsonString,
     });
-    props.close();
-    console.log(response);
+
+    response.json().then((e) => {
+      setLoading(false);
+      props.close();
+    });
   };
   return (
     <div className="create_projects_main">
@@ -169,7 +173,16 @@ export default function CreateProject(props) {
             ))}
           </ul>
           <div className="create-button">
-            <input type="submit" value="Create" />
+            <Button
+              type="primary"
+              htmlType="submit"
+              color="default"
+              variant="solid"
+              loading={loading}
+            >
+              Create
+            </Button>
+            {/* <input type="submit" value="Create" /> */}
           </div>
         </form>
       </div>
